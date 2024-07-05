@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #7EAA63;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    color: #2b2b2b;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #333;
+    color: #b5f88b;
+    width: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+    width: 250px;
+}
+
+.portrait {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 5%;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navigation ul li {
+    margin: 10px 0;
+}
+
+.navigation ul li a { /*contatos*/
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navigation ul li a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    flex: 1;
+    color: #f0f2ff;/* cor da letra pagina grande*/
+    padding: 20px;
+    margin-left: 100px; 
+    transition: margin-left 0.3s ease;
+}
+
+.content.shifted { /*margem quando mexe */
+    margin-left: 300px; 
+    margin-right: 50px; 
+}
+
+#toggle-button { /*botao */
+    background-color: #606380;
+    color: #ffffff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+}
